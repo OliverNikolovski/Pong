@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pong
@@ -22,7 +15,7 @@ namespace Pong
         {
             Difficulty difficulty = GetDifficulty(cbDifficulty.SelectedIndex);
             int targetScore = (int)nudTargetScore.Value;
-            GameForm gameForm = new GameForm(true, targetScore, difficulty, "You");
+            GameForm gameForm = new GameForm(true, targetScore, difficulty, "You", "Computer");
             gameForm.ShowDialog();
             Close();
         }
@@ -39,6 +32,8 @@ namespace Pong
                 return Difficulty.IMPOSSIBLE;
         }
 
+        // mora da povikam Dispose() koga ke se zatvori formata bidejki kaj modalnite formi ne se povikuva
+        // avtomatski Dispose() koga se zatvora formata.
         private void OnePlayerSettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Dispose();

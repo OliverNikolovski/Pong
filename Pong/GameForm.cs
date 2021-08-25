@@ -24,7 +24,7 @@ namespace Pong
         private Size window;
         private bool paused;
 
-        public GameForm(bool isAgainstComputer, int targetScore, Difficulty difficulty, string leftPlayerName, string rightPlayerName = null)
+        public GameForm(bool isAgainstComputer, int targetScore, Difficulty difficulty, string leftPlayerName, string rightPlayerName)
         {
             InitializeComponent();
             Height = Screen.PrimaryScreen.Bounds.Height;

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pong
@@ -25,6 +18,8 @@ namespace Pong
             Close();
         }
 
+        // mora da povikam Dispose() koga ke se zatvori formata bidejki kaj modalnite formi ne se povikuva
+        // avtomatski Dispose() koga se zatvora formata.
         private void TwoPlayersSettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Dispose();
