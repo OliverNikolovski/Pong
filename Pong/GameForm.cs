@@ -14,7 +14,10 @@ namespace Pong
     {
         private Game game;
         private Graphics graphics;
+        // Chetka za boenje na kanvasot so crna boja
         private Brush brush;
+        // dictionary za chuvanje koi kopcinja od tastaturata se pritisnati
+        // za dvizenje na reketite (W, S, Arrow Up, Arrow Down)
         private Dictionary<Keys, bool> pressedKeys;
         private bool isAgainstComputer;
         private int targetScore;
@@ -39,6 +42,7 @@ namespace Pong
             DoubleBuffered = true;
             graphics = CreateGraphics();
             brush = new SolidBrush(Color.Black);
+            // na pochetok site kopchinja za dvizenje na reketite se postavuvaat na false
             pressedKeys = new Dictionary<Keys, bool>
             {
                 [Keys.W] = false,
@@ -55,11 +59,13 @@ namespace Pong
             graphics.FillRectangle(brush, 0, 0, Size.Width, Size.Height);
         }
 
+        // Koga ke bide oslobodeno nekoe kopche, postavi go soodvetnoto entry na toa kopche vo dictionary na false
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
             pressedKeys[e.KeyCode] = true;
         }
 
+        // Koga ke bide pritisnato nekoe kopche, postavi go soodvetnoto entry na toa kopche vo dictionary na true
         private void GameForm_KeyUp(object sender, KeyEventArgs e)
         {
             pressedKeys[e.KeyCode] = false;
@@ -72,10 +78,15 @@ namespace Pong
             game.UpdateBall();
             if (game.IsGameOver())
             {
+                // mora soodvetnite kopchinja da se setiraat na false
+                // inache ima chuden bug kade shto koga ke se pochne nova igra
+                // inputite od prethodnata igra koi bile vneseni pred igrata da zavrshi
+                // se obrabotuvaat i ne moze da se kontroliraat reketite dodeka ne se isprocesiraat starite inputi
                 pressedKeys[Keys.W] = false;
                 pressedKeys[Keys.S] = false;
                 pressedKeys[Keys.Up] = false;
                 pressedKeys[Keys.Down] = false;
+
                 gameTimer.Enabled = false;
                 Paddle winner = game.GetWinner();
                 DialogResult result = MessageBox.Show(winner.Name.ToString() + 
