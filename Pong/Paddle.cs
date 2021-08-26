@@ -69,14 +69,5 @@ namespace Pong
         {
             Y += dy;
         }
-
-        /// <summary>
-        /// Menuvanje na dolzhinata na reketot
-        /// </summary>
-        /// <param name="newHeight">Novata dolzhina na reketot.</param>
-        public void ChangeHeight(float newHeight)
-        {
-            Height = newHeight;
-        }
     }
 }

@@ -24,13 +24,13 @@ namespace Pong
 
         // pochetnite brzini na topkata gi chuvam vo promenlivi
         // bidejki ke mi trebaat koga ke se postigne gol i ke treba da se resetira topkata
-        private static readonly float BALL_STARTING_SPEED = 15;
-        private static readonly float BALL_STARTING_VELOCITY_X = 7;
-        private static readonly float BALL_STARTING_VELOCITY_Y = 7;
+        private static readonly float BALL_STARTING_SPEED = 18;
+        private static readonly float BALL_STARTING_VELOCITY_X = 15;
+        private static readonly float BALL_STARTING_VELOCITY_Y = 15;
 
         private static readonly float RADIUS = 15; // radiusot na topkata
 
-        private static readonly float PADDLE_SPEED = 20; // brzinata na reketite
+        private static readonly float PADDLE_SPEED = 25; // brzinata na reketite
         private static readonly float PADDLE_WIDTH = 20; // debelinata na reketite
         private static readonly float PADDLE_HEIGHT = 120; // dolzhinata na reketite
 
@@ -155,7 +155,7 @@ namespace Pong
                 float bounceAngle = (float)Math.PI / 4 * normalizedRelativeIntersectionY;
                 int direction = ball.X > Window.Width / 2 ? -1 : 1;
                 ball.ChangeVelocity(direction, bounceAngle);
-                ball.Speed += 2f;
+                ball.Speed += 1f;
                 return;
             }
             CheckIfGoalScored();

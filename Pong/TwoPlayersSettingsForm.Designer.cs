@@ -275,7 +275,7 @@
             this.MaximizeBox = false;
             this.Name = "TwoPlayersSettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TwoPlayersSettingsForm";
+            this.Text = "Pong 2021";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TwoPlayersSettingsForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.nudTargetScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkey)).EndInit();
