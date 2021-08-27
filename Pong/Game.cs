@@ -62,9 +62,9 @@ namespace Pong
         private void SetDifficulty(Difficulty difficulty)
         {
             if (difficulty == Difficulty.EASY)
-                computerLevel = 0.1f;
-            else if (difficulty == Difficulty.NORMAL)
                 computerLevel = 0.3f;
+            else if (difficulty == Difficulty.NORMAL)
+                computerLevel = 0.4f;
             else if (difficulty == Difficulty.HARD)
                 computerLevel = 0.5f;
             else
